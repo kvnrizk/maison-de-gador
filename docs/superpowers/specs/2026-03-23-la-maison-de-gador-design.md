@@ -18,6 +18,24 @@ A complete digital presence for a premium chocolate date brand targeting the Qat
 - External designer delivers visual assets on demand (logo, packaging, social templates)
 - Designer created the brand guideline (9-page PDF) which is the visual source of truth
 
+### Project-Level Definition of Done
+
+Every page/feature must:
+- Work in both AR and EN with correct RTL layout
+- Be mobile-responsive (passes manual check on iOS Safari + Android Chrome)
+- Score >90 on Lighthouse performance
+- Have no console errors
+- Have alt text on all images
+
+### Risks & Mitigations
+
+| Risk | Mitigation |
+|---|---|
+| Designer unavailable/slow | Fallback: Canva Free templates, stock photography (Unsplash), AI-generated placeholder imagery |
+| VPS resource constraints | Monitor with `htop`/`df`. Upgrade to CX32 (8GB, ~$7-8/mo) if needed |
+| Social media content volume too high | Scale back to 3 feed posts/week + 2 Reels + 3 Stories during website-heavy phases |
+| Dibsy account requires commercial registration | Research Qatar CR requirements in Phase 1. Start process early — can take weeks |
+
 ---
 
 ## 1. Agile Structure & Roles
@@ -69,14 +87,14 @@ A complete digital presence for a premium chocolate date brand targeting the Qat
 | Framework | Next.js 15 (App Router) | Free | SSG/SSR, image optimization, bilingual routing |
 | Styling | Tailwind CSS | Free | Fast, matches designer's system, RTL via logical properties |
 | E-commerce | Medusa.js 2.x | Free | Open-source, headless, API-first, custom storefront |
-| Server | Hetzner VPS (CX22) | ~$5-9/mo | Everything on one box — Next.js + Medusa + Postgres + Redis |
+| Server | Hetzner VPS (CX22 or CX32) | ~$5-9/mo | Everything on one box via Docker Compose — Next.js + Medusa + Postgres + Redis |
 | Database | PostgreSQL (on VPS) | Free | Medusa's default, same Hetzner box |
 | Cache | Redis (on VPS) | Free | Medusa sessions/cache, same box |
 | Payments | Dibsy | 2.5% + 1 QAR/txn | Qatar-native, QCB compliant, no monthly fee |
 | CDN | Cloudflare (free) | Free | DNS, SSL, caching, DDoS protection |
 | Email | Zoho Mail (free, 5 users) | Free | Professional @lamaisondegador.com |
 | Domain | Cloudflare Registrar | ~$12/yr | At-cost pricing |
-| Analytics | Umami (self-hosted on VPS) | Free | Privacy-friendly, no cookie banner |
+| Analytics | Cloudflare Web Analytics | Free | Privacy-friendly, no cookie banner, zero server load |
 | Images | Next.js Image + Cloudflare | Free | Auto-optimization, WebP/AVIF |
 
 **Total: ~$9/month + $12/year domain**
@@ -105,10 +123,10 @@ A complete digital presence for a premium chocolate date brand targeting the Qat
 │  └─────────────┘  │   Orders)    │              │
 │                    └──────────────┘              │
 │                                                  │
-│  ┌─────────────┐  ┌──────────────┐              │
-│  │  Nginx       │  │  Umami       │              │
-│  │  (Reverse    │  │  (Analytics) │              │
-│  │   Proxy)     │  └──────────────┘              │
+│  ┌─────────────┐                                │
+│  │  Nginx       │  Analytics: Cloudflare Web     │
+│  │  (Reverse    │  (external, zero server load)  │
+│  │   Proxy)     │                                │
 │  └─────────────┘                                 │
 └──────────────────────────────────────────────────┘
                        │
@@ -218,8 +236,10 @@ Each phase has a PRIMARY focus and a SECONDARY track. Primary finishes before mo
 | 1.7 | Create TikTok account | Kevin | Account live |
 | 1.8 | Register domain (lamaisondegador.com) | Kevin | Domain on Cloudflare |
 | 1.9 | Set up GitHub repo with project structure | Kevin + AI | Repo initialized |
+| 1.10 | Research Qatar commercial registration (CR) requirements for e-commerce | Kevin + AI | Requirements documented, process started if needed |
+| 1.11 | Deploy "coming soon" landing page on domain with email/WhatsApp signup | Kevin + AI | Landing page live, collecting signups |
 
-**Deliverable:** All brand assets collected, all social accounts live with "coming soon" content, domain secured.
+**Deliverable:** All brand assets collected, all social accounts live with "coming soon" content, domain secured with landing page, legal requirements researched.
 
 ### Phase 2 — Social Media Engine (Sprints 2-3, Weeks 3-6)
 
@@ -271,16 +291,22 @@ Each phase has a PRIMARY focus and a SECONDARY track. Primary finishes before mo
 |---|---|---|---|
 | 4.1 | Register with Dibsy (business account) | Kevin | Account approved |
 | 4.2 | Integrate Dibsy payment API | Kevin + AI | Test payment works |
-| 4.3 | Build checkout flow (cart → shipping → payment → confirmation) | Kevin + AI | End-to-end working |
-| 4.4 | Add real products to Medusa catalog | Kevin | Products in shop |
-| 4.5 | Order confirmation email (Zoho) | Kevin + AI | Emails sending |
-| 4.6 | WhatsApp order notification | Kevin + AI | Notifications working |
-| 4.7 | Floating WhatsApp button on all pages | Kevin + AI | Button visible |
-| 4.8 | SEO — meta tags, OG images, sitemap, robots.txt | Kevin + AI | Passes SEO audit |
-| 4.9 | Send first influencer outreach DMs (10-15) | Kevin | DMs sent |
-| 4.10 | Brief designer: packaging mockups for social content | Kevin → Designer | Mockups delivered |
+| 4.3 | Build cart page (items, quantities, subtotal) | Kevin + AI | Cart functional |
+| 4.4 | Build checkout flow (shipping → payment → confirmation) | Kevin + AI | End-to-end working |
+| 4.5 | Build Dibsy custom payment provider plugin for Medusa | Kevin + AI | Payments processing |
+| 4.6 | Add real products to Medusa catalog | Kevin | Products in shop |
+| 4.7 | Order confirmation email (Zoho) | Kevin + AI | Emails sending |
+| 4.8 | WhatsApp order notification | Kevin + AI | Notifications working |
+| 4.9 | Customer order status page | Kevin + AI | Customers can track orders |
+| 4.10 | Floating WhatsApp button on all pages | Kevin + AI | Button visible |
+| 4.11 | Terms & Conditions + Privacy Policy pages (Qatar Data Privacy Law) | Kevin + AI | Pages live, linked in footer |
+| 4.12 | Shipping/delivery policy page (zones, costs, timeframes) | Kevin + AI | Page live |
+| 4.13 | Returns/refund policy (perishable food considerations) | Kevin + AI | Page live |
+| 4.14 | SEO — meta tags, OG images, sitemap, robots.txt | Kevin + AI | Passes SEO audit |
+| 4.15 | Send first influencer outreach DMs (10-15) | Kevin | DMs sent |
+| 4.16 | Brief designer: packaging mockups for social content | Kevin → Designer | Mockups delivered |
 
-**Deliverable:** Full e-commerce working, payments live, influencer pipeline started.
+**Deliverable:** Full e-commerce working, payments live, legal pages complete, influencer pipeline started.
 
 ### Phase 5 — Testing & Polish (Sprint 9, Weeks 17-18)
 
@@ -424,8 +450,13 @@ D:\Projects\La-Maison-de-Gador\
 │   ├── plans/             ← Strategy doc, sprint plans
 │   ├── brand/             ← Brand guideline PDF, color specs
 │   └── superpowers/specs/ ← Design specs
+├── docker/
+│   └── docker-compose.yml ← All services (Next.js, Medusa, Postgres, Redis, Nginx)
 ├── scripts/
 │   └── deploy.sh          ← VPS deployment script
+├── .github/
+│   └── workflows/
+│       └── ci.yml         ← Lint + type-check on push
 └── README.md
 ```
 
@@ -447,6 +478,11 @@ D:\Projects\La-Maison-de-Gador\
 | Contact | `/en/contact` | `/ar/contact` | WhatsApp, phone, email, location, Instagram link |
 | Cart | `/en/cart` | `/ar/cart` | Cart items, quantity, subtotal |
 | Checkout | `/en/checkout` | `/ar/checkout` | Shipping → Payment (Dibsy) → Confirmation |
+| Order Status | `/en/order/[id]` | `/ar/order/[id]` | Order tracking, status updates |
+| Terms | `/en/terms` | `/ar/terms` | Terms & Conditions |
+| Privacy | `/en/privacy` | `/ar/privacy` | Privacy Policy (Qatar Law No. 13 of 2016) |
+| Shipping | `/en/shipping` | `/ar/shipping` | Delivery zones, costs, timeframes |
+| Returns | `/en/returns` | `/ar/returns` | Returns/refund policy |
 
 ### Design Direction
 
@@ -481,12 +517,23 @@ D:\Projects\La-Maison-de-Gador\
 
 ### Posting Frequency
 
+**Full pace (Phases 2, 5, 6):**
+
 | Type | Frequency |
 |---|---|
 | Feed posts | 4-5x/week |
 | Reels | 3x/week |
 | Stories | Daily (5-7) |
 | Carousels | 1-2x/week |
+
+**Reduced pace during website-heavy phases (Phases 3, 4):**
+
+| Type | Frequency |
+|---|---|
+| Feed posts | 3x/week |
+| Reels | 2x/week |
+| Stories | 3x/week |
+| Carousels | 1x/week |
 
 ### Hashtag Strategy
 
