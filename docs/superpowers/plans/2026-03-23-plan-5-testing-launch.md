@@ -389,6 +389,7 @@ Document:
 
 ## Plan 5 Completion Criteria
 
+- [ ] Cloudflare Web Analytics enabled (Cloudflare dashboard → Analytics → Web Analytics → enable for lamaisondegador.com)
 - [ ] CI pipeline running on push (lint + type-check)
 - [ ] Cross-browser testing passed (Chrome, Safari, Firefox, Samsung Internet)
 - [ ] Mobile testing passed (375px to 768px)

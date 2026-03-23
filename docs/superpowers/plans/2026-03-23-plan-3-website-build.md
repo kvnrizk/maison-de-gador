@@ -382,6 +382,17 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "9000",
+      },
+      {
+        protocol: "https",
+        hostname: "lamaisondegador.com",
+      },
+    ],
   },
 };
 
@@ -482,7 +493,7 @@ Create `website/components/layout/LanguageToggle.tsx`:
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname } from "@/i18n/navigation";
 
 export default function LanguageToggle() {
   const locale = useLocale();
@@ -511,13 +522,13 @@ export default function LanguageToggle() {
 
 Create `website/components/layout/Header.tsx`:
 ```tsx
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import LanguageToggle from "./LanguageToggle";
 
-export default function Header() {
-  const t = useTranslations("nav");
+export default async function Header() {
+  const t = await getTranslations("nav");
 
   const links = [
     { href: "/", label: t("home") },
@@ -573,12 +584,12 @@ Update Header to import from `@/i18n/navigation` instead.
 
 Create `website/components/layout/Footer.tsx`:
 ```tsx
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 
-export default function Footer() {
-  const t = useTranslations("footer");
+export default async function Footer() {
+  const t = await getTranslations("footer");
 
   return (
     <footer className="bg-brand-dark text-brand-cream py-12">
@@ -669,13 +680,13 @@ git commit -m "Add shared layout: Header, Footer, WhatsApp button, language togg
 
 Create `website/components/sections/Hero.tsx`:
 ```tsx
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 
-export default function Hero() {
-  const t = useTranslations("home");
+export default async function Hero() {
+  const t = await getTranslations("home");
 
   return (
     <section className="relative min-h-[80vh] flex items-center bg-brand-dark overflow-hidden">
@@ -709,7 +720,7 @@ export default function Hero() {
 
 Create `website/components/sections/FeaturedProducts.tsx`:
 ```tsx
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 
 const PLACEHOLDER_PRODUCTS = [
@@ -718,8 +729,8 @@ const PLACEHOLDER_PRODUCTS = [
   { id: 3, name: "Artisan Selection", price: "QAR 180", image: "/images/placeholder-box-3.jpg" },
 ];
 
-export default function FeaturedProducts() {
-  const t = useTranslations("home");
+export default async function FeaturedProducts() {
+  const t = await getTranslations("home");
 
   return (
     <section className="py-20 bg-brand-white">
@@ -753,13 +764,13 @@ export default function FeaturedProducts() {
 
 Create `website/components/sections/StoryTeaser.tsx`:
 ```tsx
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 
-export default function StoryTeaser() {
-  const t = useTranslations("home");
+export default async function StoryTeaser() {
+  const t = await getTranslations("home");
 
   return (
     <section className="py-20 bg-brand-cream">
@@ -857,11 +868,11 @@ Add equivalent Arabic translations to `messages/ar.json`.
 
 Create `website/app/[locale]/about/page.tsx`:
 ```tsx
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 
-export default function AboutPage() {
-  const t = useTranslations("about");
+export default async function AboutPage() {
+  const t = await getTranslations("about");
 
   return (
     <>
@@ -978,7 +989,7 @@ import ProductGrid from "@/components/sections/ProductGrid";
 import { medusa } from "@/lib/medusa/client";
 
 export default async function ShopPage() {
-  const t = useTranslations("nav");
+  const t = await getTranslations("nav");
 
   let products = [];
   try {
@@ -1014,7 +1025,7 @@ export default async function ShopPage() {
 
 Create `website/app/[locale]/shop/[slug]/page.tsx`:
 ```tsx
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { medusa } from "@/lib/medusa/client";
@@ -1024,7 +1035,7 @@ type Props = { params: Promise<{ slug: string; locale: string }> };
 
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
-  const t = useTranslations("common");
+  const t = await getTranslations("common");
 
   let product = null;
   try {
@@ -1111,12 +1122,9 @@ git commit -am "Add Gifts, Custom Orders, Corporate, and Contact pages"
 
 - [ ] **Step 1: Set up Medusa project properly**
 
-```bash
-cd D:/Projects/La-Maison-de-Gador
-npx create-medusa-app@latest medusa-backend --skip-db --skip-client
-```
+The `medusa/` directory was already scaffolded in Plan 2. Now configure it.
 
-Follow Medusa docs for exact setup steps — check `https://docs.medusajs.com/learn/installation`.
+Follow Medusa docs for exact setup: `https://docs.medusajs.com/learn/installation`.
 
 - [ ] **Step 2: Configure medusa-config.ts**
 
@@ -1155,6 +1163,7 @@ COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/public ./public
+COPY --from=builder /app/messages ./messages
 EXPOSE 3000
 CMD ["npm", "start"]
 ```

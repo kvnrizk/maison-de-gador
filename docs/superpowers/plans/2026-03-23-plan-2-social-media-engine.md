@@ -394,23 +394,16 @@ npx create-next-app@latest website --typescript --tailwind --eslint --app --src-
 - [ ] **Step 2: Install Medusa.js**
 
 ```bash
-npx create-medusa-app@latest medusa --skip-db
+npx create-medusa-app@latest medusa --skip-db --skip-client
 ```
 
-Or manual:
-```bash
-mkdir medusa && cd medusa
-npm init -y
-npm install @medusajs/medusa @medusajs/framework
-```
+This creates the `medusa/` directory. Plan 3 will configure it fully with Docker.
 
 - [ ] **Step 3: Create Docker Compose file**
 
 Create `docker/docker-compose.yml`:
 
 ```yaml
-version: "3.8"
-
 services:
   postgres:
     image: postgres:16-alpine

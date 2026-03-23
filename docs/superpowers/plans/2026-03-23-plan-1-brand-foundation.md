@@ -732,7 +732,32 @@ git commit -m "Document social media accounts and brand reference"
 
 ---
 
-### Task 7: Research Qatar Commercial Registration
+### Task 7: Set Up Zoho Mail
+
+- [ ] **Step 1: Register Zoho Mail free account**
+
+Go to https://www.zoho.com/mail/zohomail-pricing.html — select Forever Free plan (5 users).
+
+- [ ] **Step 2: Add custom domain**
+
+Follow Zoho's domain verification for lamaisondegador.com:
+1. Add TXT record to Cloudflare DNS for verification
+2. Add MX records for Zoho mail delivery
+3. Verify domain
+
+- [ ] **Step 3: Create email addresses**
+
+- hello@lamaisondegador.com (main contact)
+- orders@lamaisondegador.com (order notifications)
+- noreply@lamaisondegador.com (transactional emails)
+
+- [ ] **Step 4: Test email sending and receiving**
+
+Send test email from hello@lamaisondegador.com to personal email. Verify delivery.
+
+---
+
+### Task 8: Research Qatar Commercial Registration
 
 - [ ] **Step 1: Document CR requirements**
 

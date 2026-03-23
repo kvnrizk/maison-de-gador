@@ -415,7 +415,54 @@ git commit -am "Add customer order status page"
 
 ---
 
-### Task 6: Legal Pages
+### Task 6: Populate Product Catalog in Medusa
+
+- [ ] **Step 1: Access Medusa Admin dashboard**
+
+Go to http://localhost:9000/app (or production URL).
+Login with admin credentials created during setup.
+
+- [ ] **Step 2: Create product categories**
+
+In Medusa Admin → Product Categories:
+- Signature Collection
+- Gift Boxes
+- Corporate Gifts
+- Seasonal (Ramadan, Eid)
+
+- [ ] **Step 3: Add products**
+
+For each product, add:
+- Title (EN) — Medusa handles one language; Arabic translations in storefront
+- Description
+- Images (from designer)
+- Variants (size: small/medium/large box)
+- Prices in QAR
+- Inventory quantity
+- Tags: "ramadan", "corporate", "wedding", etc.
+
+- [ ] **Step 4: Add collections**
+
+Group products into collections matching the Gifts page categories.
+
+- [ ] **Step 5: Create a publishable API key**
+
+Medusa Admin → Settings → Publishable API Keys.
+Copy key to `.env` as `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY`.
+
+- [ ] **Step 6: Verify products appear on storefront**
+
+Visit /en/shop — products should load from Medusa.
+
+- [ ] **Step 7: Commit env update**
+
+```bash
+git commit -am "Document Medusa publishable API key setup"
+```
+
+---
+
+### Task 7: Legal Pages
 
 **Files:**
 - Create: `website/app/[locale]/terms/page.tsx`
