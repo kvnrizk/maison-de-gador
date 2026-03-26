@@ -64,10 +64,6 @@ export default async function HomePage(props: {
             {t("hero_cta")}
           </Link>
 
-          {/* Scroll indicator */}
-          <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
-            <div className="w-px h-16 bg-gradient-to-b from-brand-gold/50 to-transparent" />
-          </div>
         </div>
       </section>
 

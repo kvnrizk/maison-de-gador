@@ -1,6 +1,6 @@
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
-import { Playfair_Display, Great_Vibes, Inter, Cairo } from "next/font/google";
+import { Playfair_Display, Alex_Brush, Inter, Cairo } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -12,7 +12,7 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const greatVibes = Great_Vibes({
+const alexBrush = Alex_Brush({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-script",
@@ -50,7 +50,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={isRtl ? "rtl" : "ltr"} suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${cairo.variable} ${playfair.variable} ${greatVibes.variable} ${
+        className={`${inter.variable} ${cairo.variable} ${playfair.variable} ${alexBrush.variable} ${
           isRtl ? "font-arabic" : "font-sans"
         } antialiased min-h-screen flex flex-col`}
       >
