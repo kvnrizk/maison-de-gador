@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Our Story",
+    "shop": "Shop",
+    "gifts": "Gift Boxes",
+    "custom": "Custom Orders",
+    "corporate": "Corporate",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero_title": "The Art of Adoration",
+    "hero_subtitle": "Premium chocolate dates, handcrafted with love in Doha",
+    "hero_cta": "Explore Collection",
+    "featured_title": "Our Collections",
+    "featured_subtitle": "Each piece tells a story of tradition and craft",
+    "story_title": "Our Story",
+    "story_text": "Born from a passion for perfection, La Maison de Gador brings together the finest Medjool dates and artisan Belgian chocolate. Every piece is a celebration of Gulf heritage and French chocolatier tradition.",
+    "story_cta": "Discover More",
+    "cta_title": "Ready to taste perfection?",
+    "cta_subtitle": "Order directly via WhatsApp for the freshest selection",
+    "cta_button": "Order on WhatsApp"
+  },
+  "about": {
+    "title": "Our Story",
+    "subtitle": "Where Tradition Meets Artistry",
+    "origin_title": "The Origin",
+    "origin_text": "La Maison de Gador was born from a simple belief: that the world's finest dates deserve to be dressed in the world's finest chocolate. Our name carries a legacy — Gador, a symbol of generosity and warmth in our family's heritage.",
+    "phoenix_title": "The Phoenix",
+    "phoenix_text": "Our phoenix emblem represents transformation — the journey of a humble date into a work of art. Rising with wings of gold, it symbolizes the rebirth of tradition through modern craftsmanship.",
+    "craft_title": "The Craft",
+    "craft_text": "Every chocolate date is handcrafted in small batches. We source premium Medjool dates from the finest groves and coat them in single-origin Belgian chocolate, finished with hand-selected nuts, edible gold, and natural flavors.",
+    "values_title": "Our Values",
+    "value_quality": "Uncompromising Quality",
+    "value_quality_text": "Only the finest ingredients make it into our kitchen.",
+    "value_heritage": "Heritage & Innovation",
+    "value_heritage_text": "We honor Gulf traditions while pushing creative boundaries.",
+    "value_craft": "Artisan Craft",
+    "value_craft_text": "Every piece is handmade with attention to the smallest detail."
+  },
+  "shop": {
+    "title": "Our Collection",
+    "subtitle": "Handcrafted chocolate dates for every occasion",
+    "filter_all": "All",
+    "filter_signature": "Signature",
+    "filter_premium": "Premium",
+    "filter_gifting": "Gifting",
+    "add_to_cart": "Add to Cart",
+    "view_details": "View Details",
+    "from": "From"
+  },
+  "product": {
+    "ingredients": "Ingredients",
+    "perfect_for": "Perfect For",
+    "order_whatsapp": "Order via WhatsApp",
+    "back_to_shop": "Back to Collection"
+  },
+  "gifts": {
+    "title": "Gift Boxes",
+    "subtitle": "Curated collections for life's special moments",
+    "ramadan": "Ramadan Collection",
+    "eid": "Eid Celebration",
+    "wedding": "Wedding Favors",
+    "corporate": "Corporate Gifts",
+    "customize_cta": "Customize This Box",
+    "pieces": "pieces"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "We'd love to hear from you",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "location": "Location",
+    "location_value": "Doha, Qatar",
+    "hours": "Hours",
+    "hours_value": "Sun–Thu: 9am–9pm",
+    "follow": "Follow Us"
+  },
+  "footer": {
+    "tagline": "The Art of Adoration",
+    "quick_links": "Quick Links",
+    "connect": "Connect",
+    "rights": "All rights reserved"
+  },
+  "common": {
+    "language": "العربية",
+    "whatsapp_cta": "Chat on WhatsApp"
+  }
+}
