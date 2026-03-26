@@ -19,7 +19,7 @@ export default async function AboutPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-playfair)] font-bold text-brand-gold mb-6 tracking-wide">
             {t("title")}
           </h1>
-          <p className="text-brand-cream/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-brand-cream/80 text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed font-[family-name:var(--font-script)]">
             {t("subtitle")}
           </p>
           <div className="h-px w-24 bg-brand-gold/40 mx-auto mt-8" />

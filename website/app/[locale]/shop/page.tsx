@@ -31,7 +31,7 @@ export default async function ShopPage(props: {
             {t("title")}
           </h1>
           <div className="w-24 h-1 bg-brand-gold mx-auto mb-6" />
-          <p className="text-lg text-brand-dark/70 max-w-2xl mx-auto">
+          <p className="text-xl text-brand-dark/70 max-w-2xl mx-auto font-[family-name:var(--font-script)]">
             {t("subtitle")}
           </p>
         </div>

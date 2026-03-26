@@ -55,7 +55,7 @@ export default async function GiftsPage(props: {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-playfair)] font-bold text-brand-gold-light tracking-wide mb-6">
             {t("title")}
           </h1>
-          <p className="text-brand-cream/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-brand-cream/80 text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed font-[family-name:var(--font-script)]">
             {t("subtitle")}
           </p>
           <div className="mt-8 w-24 h-px bg-brand-gold/40 mx-auto" />
@@ -188,7 +188,7 @@ export default async function GiftsPage(props: {
       <section className="py-16 bg-brand-teal">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <div className="w-12 h-px bg-brand-gold/40 mx-auto mb-8" />
-          <p className="text-brand-cream/70 text-lg mb-8 leading-relaxed">
+          <p className="text-brand-cream/70 text-xl mb-8 leading-relaxed font-[family-name:var(--font-script)]">
 {locale === "ar"
               ? "هل تحتاج إلى ترتيب خاص؟ نصنع علب هدايا مخصصة لأي مناسبة وبأي كمية."
               : "Need a custom arrangement? We create bespoke gift boxes for any occasion, any quantity."}

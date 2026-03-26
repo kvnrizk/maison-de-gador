@@ -14,7 +14,7 @@ export default async function ContactPage(props: {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-playfair)] font-bold text-brand-dark tracking-wide mb-6">
             {t("title")}
           </h1>
-          <p className="text-brand-dark/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-brand-dark/60 text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed font-[family-name:var(--font-script)]">
             {t("subtitle")}
           </p>
           <div className="mt-8 w-24 h-px bg-brand-gold/40 mx-auto" />
@@ -285,7 +285,7 @@ export default async function ContactPage(props: {
             </div>
           </div>
 
-          <p className="text-center text-brand-cream/50 text-sm mt-8 tracking-wide">
+          <p className="text-center text-brand-cream/50 text-lg mt-8 tracking-wide font-[family-name:var(--font-script)]">
 {locale === "ar" ? "مصنوعة يدوياً بحب في الدوحة، قطر" : "Handcrafted with love in Doha, Qatar"}
           </p>
         </div>
