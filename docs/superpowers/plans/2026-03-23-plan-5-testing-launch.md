@@ -80,7 +80,7 @@ Test every page in these browsers:
 
 For each page, verify:
 - [ ] Layout renders correctly
-- [ ] Fonts load (Handstory for headlines, Satoshi for body)
+- [ ] Fonts load (Inter for body, Cairo for Arabic)
 - [ ] Colors match brand palette
 - [ ] Images display
 - [ ] Links work

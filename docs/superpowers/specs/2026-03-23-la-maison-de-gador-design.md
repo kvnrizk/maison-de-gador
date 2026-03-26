@@ -164,41 +164,42 @@ app/
 ### Brand System
 
 **Fonts (from brand guideline):**
-- Handstory — Headlines/display (script font)
-- Satoshi — Body text (clean sans-serif)
-- Cairo or Tajawal — Arabic body (pairs well with Satoshi)
-- Loaded via `next/font/local` for Handstory, Google Fonts for Satoshi + Arabic
+- Script/calligraphic — "La Maison De" wordmark (elegant calligraphy)
+- Bold serif — "GADOR" wordmark (strong, uppercase)
+- Inter — Body text (placeholder, clean sans-serif)
+- Cairo — Arabic body (pairs well with Inter)
+- Loaded via `next/font/google` for Inter + Cairo, custom for brand wordmarks
 
 **Color Palette (from brand guideline):**
 
 | Color | Hex | Usage |
 |---|---|---|
-| Chocolate Brown | #8B6914 | Primary brand color |
-| Cream/Beige | #F0E6D3 | Light backgrounds |
-| Sky Blue | #3AABE0 | Accent |
-| Burnt Orange | #E07830 | Accent |
-| Dark Chocolate | #3C2415 | Deep contrast, text |
-| Warm White | #FAF6F0 | Page background |
+| Deep Teal | #1B4D4D | Primary brand color |
+| Deep Burgundy | #6B1022 | Secondary brand color, accents |
+| Gold | #C9A84E | Luxury accents, highlights |
+| Gold Light | #D4B96A | Subtle gold accents, hover states |
+| Cream | #F5F0E8 | Light backgrounds |
+| Dark | #0F2E2E | Deep contrast, text, dark backgrounds |
 
 **CSS Variables:**
 ```css
 :root {
-  --color-brown:       #8B6914;
-  --color-cream:       #F0E6D3;
-  --color-blue:        #3AABE0;
-  --color-orange:      #E07830;
-  --color-dark:        #3C2415;
-  --color-white:       #FAF6F0;
+  --color-teal:        #1B4D4D;
+  --color-burgundy:    #6B1022;
+  --color-gold:        #C9A84E;
+  --color-gold-light:  #D4B96A;
+  --color-cream:       #F5F0E8;
+  --color-dark:        #0F2E2E;
 }
 ```
 
 **Logo Variants:**
-1. Primary — Phoenix/cocoa bean icon + "La Maison de GADOR Chocolatier" (light on dark, dark on light)
-2. Icon only — Stylized cocoa bean with diamond center (for avatars, stamps, favicon)
-3. Text only — "La Maison de GADOR" in brand font
+1. Primary — Phoenix/bird icon with spread wings and flame + "La Maison de GADOR Chocolatier" (light on dark, dark on light)
+2. Icon only — Phoenix/bird with spread wings and flame on top (for avatars, stamps, favicon)
+3. Text only — "La Maison De" in script/calligraphy + "GADOR" in bold serif
 4. Arabic version — Same layout with Arabic brand name
 
-**Illustration Style:** Hand-drawn botanical engravings (cocoa pods, chocolate bars, nuts, citrus)
+**Illustration Style:** Opulent gold on jewel-toned backgrounds, Middle Eastern luxury aesthetic, metallic accents, ornamental patterns
 
 ### Social Media Tools (All Free)
 
@@ -229,7 +230,7 @@ Each phase has a PRIMARY focus and a SECONDARY track. Primary finishes before mo
 |---|---|---|---|
 | 1.1 | Brief designer: export logo as SVG (all 4 variants) | Kevin → Designer | SVG files in `assets/logo/` |
 | 1.2 | Brief designer: social media templates (profile pic, cover, post, story) | Kevin → Designer | Templates delivered |
-| 1.3 | Collect fonts: Handstory files, download Satoshi, pick Arabic font | Kevin | Font files in `assets/fonts/` |
+| 1.3 | Collect fonts: script/calligraphic + bold serif for wordmarks, download Inter, Cairo for Arabic | Kevin | Font files in `assets/fonts/` |
 | 1.4 | Finalize color palette — extract exact hex values from designer's files | Kevin + Designer | `brand.md` confirmed |
 | 1.5 | Create Instagram business account @lamaisondegador | Kevin | Account live |
 | 1.6 | Create Facebook business page | Kevin | Page live, linked to IG |
@@ -410,8 +411,8 @@ Kevin                          Designer                    Repo
 ### Specs
 - Dimensions: [e.g., 1080x1080 for IG post]
 - Format: [SVG / PNG @2x / Figma]
-- Color: Must use brand palette (brown #8B6914, cream #F0E6D3, etc.)
-- Font: Handstory for headlines, Satoshi for body
+- Color: Must use brand palette (teal #1B4D4D, burgundy #6B1022, gold #C9A84E, cream #F5F0E8, etc.)
+- Font: Script/calligraphic for display, bold serif for emphasis, Inter for body
 
 ### References
 [Screenshots, competitor examples, mood images]
@@ -428,10 +429,10 @@ Kevin                          Designer                    Repo
 D:\Projects\La-Maison-de-Gador\
 ├── assets/
 │   ├── logo/              ← SVGs from designer
-│   ├── fonts/             ← Handstory, Satoshi, Arabic font
+│   ├── fonts/             ← Brand wordmark fonts, Inter, Cairo
 │   ├── social-templates/  ← IG/FB/TikTok templates
 │   ├── photography/       ← Product/lifestyle photos
-│   └── illustrations/     ← Hand-drawn botanical elements
+│   └── illustrations/     ← Ornamental patterns, metallic accent elements
 ├── website/
 │   ├── app/               ← Next.js App Router
 │   ├── components/
@@ -469,7 +470,7 @@ D:\Projects\La-Maison-de-Gador\
 | Page | Route (EN) | Route (AR) | Key Sections |
 |---|---|---|---|
 | Home | `/en` | `/ar` | Hero, featured products, story teaser, IG embed, WhatsApp CTA |
-| About | `/en/about` | `/ar/about` | Brand story, cocoa bean symbol meaning, craftsmanship, photo gallery |
+| About | `/en/about` | `/ar/about` | Brand story, phoenix symbol meaning, craftsmanship, photo gallery |
 | Shop | `/en/shop` | `/ar/shop` | Product catalog grid, filters (type, price, occasion) |
 | Product Detail | `/en/shop/[slug]` | `/ar/shop/[slug]` | Images, ingredients, "perfect for" tags, add to cart, WhatsApp order |
 | Gift Boxes | `/en/gifts` | `/ar/gifts` | Curated collections: Ramadan, Eid, Wedding, Corporate |
@@ -486,11 +487,11 @@ D:\Projects\La-Maison-de-Gador\
 
 ### Design Direction
 
-- Dark/warm backgrounds for product sections (makes gold packaging pop)
-- Cream/warm white for text-heavy sections
-- Handstory (script) for hero headlines, Satoshi for body
-- Hand-drawn botanical illustrations as decorative elements
-- Mobile-first, generous white space, gold/brown accents
+- Deep teal/dark backgrounds for product sections (makes gold accents pop)
+- Cream for text-heavy sections
+- Script/calligraphic for hero headlines, Inter for body
+- Ornamental patterns and metallic accents as decorative elements
+- Mobile-first, generous white space, gold/teal/burgundy accents
 - Floating WhatsApp button on every page
 - Language toggle (AR/EN) in header
 

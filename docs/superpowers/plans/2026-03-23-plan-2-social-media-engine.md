@@ -94,7 +94,7 @@ Create `content/calendar/month-01.md`:
 | 23 | IG+FB | Feed Post | Corporate gift box mockup with branded sleeve | Showcase |
 | 24 | IG+FB | Carousel | "Why Premium Dates?" — quality, sourcing, craftsmanship | Heritage |
 | 25 | IG+TT | Reel | Influencer unboxing (first collab) | Lifestyle |
-| 26 | IG+FB | Feed Post | Dates arranged in cocoa bean shape (brand symbol) | Showcase |
+| 26 | IG+FB | Feed Post | Dates arranged in phoenix shape (brand symbol) | Showcase |
 | 27 | IG | Stories | Giveaway announcement: "Win a luxury gift box" | Engagement |
 | 28 | IG+TT | Reel | Customer delivery moment — joy of receiving box | Lifestyle |
 | 29 | IG+FB | Feed Post | "Thank you for an amazing first month" | Engagement |
@@ -203,9 +203,9 @@ Reusable templates for Instagram/Facebook/TikTok in Canva or Figma.
 7. **TikTok thumbnail** (1080x1920) — video cover template
 
 ### Specs
-- Use brand colors: brown #8B6914, cream #F0E6D3, accents as needed
-- Font: Handstory for headlines, Satoshi for body
-- Include botanical illustration elements from brand guideline
+- Use brand colors: teal #1B4D4D, gold #C9A84E, burgundy #6B1022, cream #F5F0E8
+- Font: Script/serif for headlines (TBD), Inter for body
+- Include opulent gold and jewel-tone design elements from brand guideline
 - Leave placeholder areas for product photos
 - Include brand watermark/logo in corner
 

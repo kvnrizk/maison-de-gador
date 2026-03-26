@@ -62,7 +62,7 @@ website/
 │   ├── request.ts
 │   └── routing.ts
 ├── public/
-│   ├── fonts/                       ← Handstory, Satoshi, Cairo
+│   ├── fonts/                       ← Inter (placeholder), Cairo
 │   ├── images/                      ← Static images
 │   └── icons/                       ← Favicons
 ├── next.config.ts
@@ -108,19 +108,13 @@ Create `website/lib/fonts.ts`:
 ```typescript
 import localFont from "next/font/local";
 
-export const satoshi = localFont({
+export const inter = localFont({
   src: [
-    { path: "../public/fonts/Satoshi-Regular.woff2", weight: "400", style: "normal" },
-    { path: "../public/fonts/Satoshi-Medium.woff2", weight: "500", style: "normal" },
-    { path: "../public/fonts/Satoshi-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/Inter-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/Inter-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/Inter-Bold.woff2", weight: "700", style: "normal" },
   ],
-  variable: "--font-satoshi",
-  display: "swap",
-});
-
-export const handstory = localFont({
-  src: "../public/fonts/Handstory.woff2",
-  variable: "--font-handstory",
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -150,17 +144,16 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          brown: "#8B6914",
-          cream: "#F0E6D3",
-          blue: "#3AABE0",
-          orange: "#E07830",
-          dark: "#3C2415",
-          white: "#FAF6F0",
+          teal: "#1B4D4D",
+          burgundy: "#6B1022",
+          gold: "#C9A84E",
+          "gold-light": "#D4B96A",
+          cream: "#F5F0E8",
+          dark: "#0F2E2E",
         },
       },
       fontFamily: {
-        handstory: ["var(--font-handstory)"],
-        satoshi: ["var(--font-satoshi)"],
+        inter: ["var(--font-inter)"],
         cairo: ["var(--font-cairo)"],
       },
     },
@@ -179,16 +172,16 @@ Replace `website/app/globals.css`:
 @tailwind utilities;
 
 :root {
-  --color-brown: #8B6914;
-  --color-cream: #F0E6D3;
-  --color-blue: #3AABE0;
-  --color-orange: #E07830;
-  --color-dark: #3C2415;
-  --color-white: #FAF6F0;
+  --color-teal: #1B4D4D;
+  --color-burgundy: #6B1022;
+  --color-gold: #C9A84E;
+  --color-gold-light: #D4B96A;
+  --color-cream: #F5F0E8;
+  --color-dark: #0F2E2E;
 }
 
 body {
-  background-color: var(--color-white);
+  background-color: var(--color-cream);
   color: var(--color-dark);
 }
 
@@ -336,7 +329,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { satoshi, handstory, cairo } from "@/lib/fonts";
+import { inter, cairo } from "@/lib/fonts";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
@@ -354,11 +347,11 @@ export default async function LocaleLayout({ children, params }: Props) {
   const dir = locale === "ar" ? "rtl" : "ltr";
   const fontClass = locale === "ar"
     ? `${cairo.variable} font-cairo`
-    : `${satoshi.variable} font-satoshi`;
+    : `${inter.variable} font-inter`;
 
   return (
     <html lang={locale} dir={dir}>
-      <body className={`${handstory.variable} ${satoshi.variable} ${cairo.variable} ${fontClass} antialiased bg-brand-white text-brand-dark`}>
+      <body className={`${inter.variable} ${cairo.variable} ${fontClass} antialiased bg-brand-cream text-brand-dark`}>
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main className="min-h-screen">{children}</main>
@@ -469,9 +462,9 @@ export default function Button({
       className={cn(
         "inline-flex items-center justify-center rounded-lg font-medium transition-colors",
         {
-          "bg-brand-brown text-brand-cream hover:bg-brand-dark": variant === "primary",
-          "bg-brand-cream text-brand-brown hover:bg-brand-brown hover:text-brand-cream": variant === "secondary",
-          "border-2 border-brand-brown text-brand-brown hover:bg-brand-brown hover:text-brand-cream": variant === "outline",
+          "bg-brand-teal text-brand-cream hover:bg-brand-dark": variant === "primary",
+          "bg-brand-cream text-brand-teal hover:bg-brand-teal hover:text-brand-cream": variant === "secondary",
+          "border-2 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark": variant === "outline",
           "px-3 py-1.5 text-sm": size === "sm",
           "px-5 py-2.5 text-base": size === "md",
           "px-7 py-3 text-lg": size === "lg",
@@ -510,7 +503,7 @@ export default function LanguageToggle() {
   return (
     <button
       onClick={switchLocale}
-      className="text-sm font-medium text-brand-brown hover:text-brand-dark transition-colors"
+      className="text-sm font-medium text-brand-teal hover:text-brand-gold transition-colors"
     >
       {t("language")}
     </button>
@@ -540,11 +533,11 @@ export default async function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-brand-white/90 backdrop-blur-md border-b border-brand-cream">
+    <header className="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-gold-light/30">
       <Container className="flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2">
           <img src="/images/logo-icon.svg" alt="" className="h-8 w-auto" />
-          <span className="font-handstory text-xl text-brand-brown hidden sm:block">
+          <span className="text-xl font-bold text-brand-teal hidden sm:block">
             Gador
           </span>
         </Link>
@@ -554,7 +547,7 @@ export default async function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-brand-dark/70 hover:text-brand-brown transition-colors"
+              className="text-sm text-brand-dark/70 hover:text-brand-gold transition-colors"
             >
               {link.label}
             </Link>
@@ -693,7 +686,7 @@ export default async function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/90 to-brand-dark/60" />
       <Container className="relative z-10 py-20">
         <div className="max-w-2xl">
-          <h1 className="font-handstory text-5xl sm:text-6xl md:text-7xl text-brand-cream mb-6">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl text-brand-cream font-bold mb-6">
             {t("hero_title")}
           </h1>
           <p className="text-xl text-brand-cream/80 mb-8">
@@ -704,7 +697,7 @@ export default async function Hero() {
               <Button size="lg">{t("shop_now")}</Button>
             </Link>
             <Link href="/about">
-              <Button variant="outline" size="lg" className="border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-brand-dark">
+              <Button variant="outline" size="lg" className="border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark">
                 {t("our_story")}
               </Button>
             </Link>
@@ -733,24 +726,24 @@ export default async function FeaturedProducts() {
   const t = await getTranslations("home");
 
   return (
-    <section className="py-20 bg-brand-white">
+    <section className="py-20 bg-brand-cream">
       <Container>
-        <h2 className="font-handstory text-3xl sm:text-4xl text-brand-brown text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl text-brand-teal text-center mb-12 font-bold">
           {t("featured_title")}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {PLACEHOLDER_PRODUCTS.map((product) => (
             <div key={product.id} className="group cursor-pointer">
               <div className="aspect-square bg-brand-cream rounded-lg overflow-hidden mb-4">
-                <div className="w-full h-full flex items-center justify-center text-brand-brown/30">
+                <div className="w-full h-full flex items-center justify-center text-brand-teal/30">
                   {/* Replace with real product images */}
                   <span className="text-sm">{product.name}</span>
                 </div>
               </div>
-              <h3 className="font-medium text-brand-dark group-hover:text-brand-brown transition-colors">
+              <h3 className="font-medium text-brand-dark group-hover:text-brand-gold transition-colors">
                 {product.name}
               </h3>
-              <p className="text-brand-brown font-medium">{product.price}</p>
+              <p className="text-brand-gold font-medium">{product.price}</p>
             </div>
           ))}
         </div>
@@ -773,14 +766,14 @@ export default async function StoryTeaser() {
   const t = await getTranslations("home");
 
   return (
-    <section className="py-20 bg-brand-cream">
+    <section className="py-20 bg-brand-teal">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="font-handstory text-3xl sm:text-4xl text-brand-brown mb-6">
+            <h2 className="text-3xl sm:text-4xl text-brand-gold mb-6 font-bold">
               {t("our_story")}
             </h2>
-            <p className="text-brand-dark/70 leading-relaxed mb-6">
+            <p className="text-brand-cream/70 leading-relaxed mb-6">
               La Maison de Gador is where French artistry meets Gulf tradition.
               Each chocolate date is a masterpiece — handcrafted with the finest
               ingredients and wrapped with love.
@@ -789,7 +782,7 @@ export default async function StoryTeaser() {
               <Button variant="secondary">{t("our_story")}</Button>
             </Link>
           </div>
-          <div className="aspect-[4/3] bg-brand-brown/10 rounded-lg flex items-center justify-center text-brand-brown/30">
+          <div className="aspect-[4/3] bg-brand-cream/10 rounded-lg flex items-center justify-center text-brand-cream/30">
             {/* Replace with lifestyle photo */}
             <span className="text-sm">Brand Story Image</span>
           </div>
@@ -858,7 +851,7 @@ Add to `messages/en.json`:
   "story_p3": "Every box is handcrafted with the same care you'd give a gift to someone you adore. Because that's exactly what it is.",
   "craft_title": "The Craft",
   "symbol_title": "Our Symbol",
-  "symbol_text": "The cocoa bean at the heart of our name represents transformation — from raw nature to refined luxury. The diamond within symbolizes the precious care in every piece."
+  "symbol_text": "The phoenix at the heart of our brand represents rebirth and transformation — from raw nature to refined luxury. Its fiery wings symbolize the passion and care in every piece."
 }
 ```
 
@@ -876,12 +869,12 @@ export default async function AboutPage() {
 
   return (
     <>
-      <section className="py-20 bg-brand-cream">
+      <section className="py-20 bg-brand-teal">
         <Container className="max-w-3xl text-center">
-          <h1 className="font-handstory text-4xl sm:text-5xl text-brand-brown mb-4">
+          <h1 className="text-4xl sm:text-5xl text-brand-gold mb-4 font-bold">
             {t("title")}
           </h1>
-          <p className="text-lg text-brand-dark/60">{t("subtitle")}</p>
+          <p className="text-lg text-brand-cream/60">{t("subtitle")}</p>
         </Container>
       </section>
 
@@ -896,7 +889,7 @@ export default async function AboutPage() {
       <section className="py-16 bg-brand-dark text-brand-cream">
         <Container className="max-w-3xl text-center">
           <img src="/images/logo-icon-light.svg" alt="" className="h-16 mx-auto mb-6" />
-          <h2 className="font-handstory text-3xl mb-4">{t("symbol_title")}</h2>
+          <h2 className="text-3xl mb-4 font-bold text-brand-gold">{t("symbol_title")}</h2>
           <p className="text-brand-cream/70 leading-relaxed">{t("symbol_text")}</p>
         </Container>
       </section>
@@ -964,12 +957,12 @@ export default function ProductGrid({ products }: { products: Product[] }) {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center text-brand-brown/30 text-sm">
+              <div className="w-full h-full flex items-center justify-center text-brand-teal/30 text-sm">
                 {product.title}
               </div>
             )}
           </div>
-          <h3 className="font-medium text-brand-dark group-hover:text-brand-brown transition-colors">
+          <h3 className="font-medium text-brand-dark group-hover:text-brand-gold transition-colors">
             {product.title}
           </h3>
         </Link>
@@ -1005,7 +998,7 @@ export default async function ShopPage() {
   return (
     <section className="py-20">
       <Container>
-        <h1 className="font-handstory text-4xl text-brand-brown text-center mb-12">
+        <h1 className="text-4xl text-brand-teal text-center mb-12 font-bold">
           {t("shop")}
         </h1>
         {products.length > 0 ? (
@@ -1058,7 +1051,7 @@ export default async function ProductPage({ params }: Props) {
             {product.thumbnail ? (
               <img src={product.thumbnail} alt={product.title} className="w-full h-full object-cover" />
             ) : (
-              <div className="w-full h-full flex items-center justify-center text-brand-brown/30">
+              <div className="w-full h-full flex items-center justify-center text-brand-teal/30">
                 Product Image
               </div>
             )}
@@ -1208,7 +1201,7 @@ git commit -am "Responsive design and RTL polish"
 
 - [ ] Next.js project with Tailwind + next-intl running
 - [ ] Full bilingual support (EN/AR) with RTL
-- [ ] Brand fonts (Handstory, Satoshi, Cairo) loading
+- [ ] Brand fonts (Inter placeholder, Cairo) loading
 - [ ] Shared layout: Header with nav + language toggle, Footer, WhatsApp button
 - [ ] Homepage: Hero, Featured Products, Story Teaser
 - [ ] About page with brand story

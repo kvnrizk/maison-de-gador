@@ -18,9 +18,9 @@
 D:\Projects\La-Maison-de-Gador\
 ├── assets/
 │   ├── logo/                  ← SVGs from designer (4 variants)
-│   ├── fonts/                 ← Handstory, Satoshi, Arabic font files
+│   ├── fonts/                 ← Inter (placeholder), serif font (TBD), Arabic font files
 │   ├── social-templates/      ← Designer's IG/FB/TikTok templates
-│   └── illustrations/         ← Hand-drawn botanical elements
+│   └── illustrations/         ← Opulent gold and jewel-tone design elements
 ├── landing/
 │   ├── app/
 │   │   ├── layout.tsx         ← Root layout with fonts + metadata
@@ -136,33 +136,35 @@ git commit -m "Initialize project structure"
 
 | Name | Hex | CSS Variable | Usage |
 |---|---|---|---|
-| Chocolate Brown | #8B6914 | --color-brown | Primary brand |
-| Cream | #F0E6D3 | --color-cream | Light backgrounds |
-| Sky Blue | #3AABE0 | --color-blue | Accent |
-| Burnt Orange | #E07830 | --color-orange | Accent |
-| Dark Chocolate | #3C2415 | --color-dark | Text, deep contrast |
-| Warm White | #FAF6F0 | --color-white | Page background |
+| Teal | #1B4D4D | --color-teal | Primary brand |
+| Burgundy | #6B1022 | --color-burgundy | Accent, CTAs |
+| Gold | #C9A84E | --color-gold | Metallic accents, highlights |
+| Gold Light | #D4B96A | --color-gold-light | Secondary gold, hover states |
+| Cream | #F5F0E8 | --color-cream | Light backgrounds |
+| Dark | #0F2E2E | --color-dark | Text, deep contrast |
 
 ## Typography
 
 | Use | Font | Weight | Source |
 |---|---|---|---|
-| Headlines (EN) | Handstory | Regular | Designer (local file) |
-| Body (EN) | Satoshi | 400, 500, 700 | fontsource.org or Google |
+| "La Maison De" | Script font (TBD) | Regular | TBD |
+| "GADOR" | Serif font (TBD) | Regular | TBD |
+| Body (EN) | Inter (placeholder) | 400, 500, 700 | Google Fonts |
 | Body (AR) | Cairo | 400, 600, 700 | Google Fonts |
 
 ## Logo Variants
 
-1. `logo-primary-light.svg` — Brown on cream
-2. `logo-primary-dark.svg` — Cream on brown
-3. `logo-icon-light.svg` — Cocoa bean icon, brown
-4. `logo-icon-dark.svg` — Cocoa bean icon, cream
+1. `logo-primary-light.svg` — Teal/gold on cream
+2. `logo-primary-dark.svg` — Cream/gold on teal
+3. `logo-icon-light.svg` — Phoenix icon, teal/gold
+4. `logo-icon-dark.svg` — Phoenix icon, cream/gold
 5. `logo-text-only.svg` — Text mark only
 
-## Illustration Style
+## Design Style
 
-Hand-drawn botanical line art: cocoa pods, chocolate bars, nuts, citrus.
-Cream background. Used as decorative elements, never as primary content.
+Opulent gold on jewel tones with Middle Eastern luxury aesthetic.
+Metallic gold accents, phoenix/bird motifs, rich teal and burgundy palette.
+Used as decorative elements, never as primary content.
 ```
 
 - [ ] **Step 2: Create first designer brief**
@@ -187,7 +189,7 @@ All logo variants exported as clean SVG files, optimized for web.
 ### Variants Needed
 1. Full logo (La Maison de GADOR Chocolatier) — on light bg
 2. Full logo — on dark bg
-3. Icon only (cocoa bean symbol) — on light bg
+3. Icon only (phoenix symbol) — on light bg
 4. Icon only — on dark bg
 5. Text only (La Maison de GADOR) — on light bg
 
@@ -199,8 +201,8 @@ Website header, favicon, social media profile pictures, OG image
 
 Manual steps:
 1. Send `content/briefs/001-logo-export.md` to designer
-2. Download Satoshi font from fontsource.org → `assets/fonts/`
-3. Get Handstory font files from designer → `assets/fonts/`
+2. Download Inter font from Google Fonts → `assets/fonts/`
+3. Get script/serif font files from designer (TBD) → `assets/fonts/`
 4. Download Cairo font from Google Fonts → `assets/fonts/`
 
 - [ ] **Step 4: Commit brand docs**
@@ -274,17 +276,16 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          brown: "#8B6914",
-          cream: "#F0E6D3",
-          blue: "#3AABE0",
-          orange: "#E07830",
-          dark: "#3C2415",
-          white: "#FAF6F0",
+          teal: "#1B4D4D",
+          burgundy: "#6B1022",
+          gold: "#C9A84E",
+          "gold-light": "#D4B96A",
+          cream: "#F5F0E8",
+          dark: "#0F2E2E",
         },
       },
       fontFamily: {
-        handstory: ["var(--font-handstory)"],
-        satoshi: ["var(--font-satoshi)"],
+        inter: ["var(--font-inter)"],
       },
     },
   },
@@ -303,16 +304,16 @@ Replace `landing/app/globals.css`:
 @tailwind utilities;
 
 :root {
-  --color-brown: #8B6914;
-  --color-cream: #F0E6D3;
-  --color-blue: #3AABE0;
-  --color-orange: #E07830;
-  --color-dark: #3C2415;
-  --color-white: #FAF6F0;
+  --color-teal: #1B4D4D;
+  --color-burgundy: #6B1022;
+  --color-gold: #C9A84E;
+  --color-gold-light: #D4B96A;
+  --color-cream: #F5F0E8;
+  --color-dark: #0F2E2E;
 }
 
 body {
-  background-color: var(--color-white);
+  background-color: var(--color-cream);
   color: var(--color-dark);
 }
 ```
@@ -326,19 +327,13 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const satoshi = localFont({
+const inter = localFont({
   src: [
-    { path: "../public/fonts/Satoshi-Regular.woff2", weight: "400" },
-    { path: "../public/fonts/Satoshi-Medium.woff2", weight: "500" },
-    { path: "../public/fonts/Satoshi-Bold.woff2", weight: "700" },
+    { path: "../public/fonts/Inter-Regular.woff2", weight: "400" },
+    { path: "../public/fonts/Inter-Medium.woff2", weight: "500" },
+    { path: "../public/fonts/Inter-Bold.woff2", weight: "700" },
   ],
-  variable: "--font-satoshi",
-  display: "swap",
-});
-
-const handstory = localFont({
-  src: "../public/fonts/Handstory.woff2",
-  variable: "--font-handstory",
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -361,7 +356,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${satoshi.variable} ${handstory.variable} font-satoshi antialiased`}
+        className={`${inter.variable} font-inter antialiased`}
       >
         {children}
       </body>
@@ -404,7 +399,7 @@ export default function SignupForm() {
   if (submitted) {
     return (
       <div className="text-center">
-        <p className="text-lg text-brand-brown font-medium">
+        <p className="text-lg text-brand-gold font-medium">
           Thank you! We&apos;ll notify you when we launch.
         </p>
       </div>
@@ -419,11 +414,11 @@ export default function SignupForm() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Your email address"
-        className="flex-1 px-4 py-3 rounded-lg border border-brand-cream bg-white text-brand-dark placeholder:text-brand-brown/50 focus:outline-none focus:ring-2 focus:ring-brand-brown"
+        className="flex-1 px-4 py-3 rounded-lg border border-brand-cream bg-white text-brand-dark placeholder:text-brand-teal/50 focus:outline-none focus:ring-2 focus:ring-brand-gold"
       />
       <button
         type="submit"
-        className="px-6 py-3 bg-brand-brown text-brand-cream rounded-lg font-medium hover:bg-brand-dark transition-colors"
+        className="px-6 py-3 bg-brand-teal text-brand-cream rounded-lg font-medium hover:bg-brand-dark transition-colors"
       >
         Notify Me
       </button>
@@ -484,7 +479,7 @@ import SignupForm from "@/components/SignupForm";
 
 export default function ComingSoon() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center px-6 py-12 bg-brand-white">
+    <main className="min-h-screen flex flex-col items-center justify-center px-6 py-12 bg-brand-cream">
       {/* Logo */}
       <div className="mb-8">
         <img
@@ -495,7 +490,7 @@ export default function ComingSoon() {
       </div>
 
       {/* Headline */}
-      <h1 className="font-handstory text-4xl sm:text-5xl md:text-6xl text-brand-brown text-center mb-4">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl text-brand-teal text-center mb-4 font-bold">
         Something Beautiful is Coming
       </h1>
 
@@ -513,26 +508,26 @@ export default function ComingSoon() {
         href="https://wa.me/974XXXXXXXX?text=I%20want%20to%20know%20more%20about%20La%20Maison%20de%20Gador"
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-6 text-brand-brown hover:text-brand-dark underline underline-offset-4 transition-colors"
+        className="mt-6 text-brand-gold hover:text-brand-teal underline underline-offset-4 transition-colors"
       >
         Or reach us on WhatsApp
       </a>
 
       {/* Social Links */}
-      <div className="mt-12 flex gap-6 text-brand-brown/60">
-        <a href="https://instagram.com/lamaisondegador" target="_blank" rel="noopener noreferrer" className="hover:text-brand-brown transition-colors">
+      <div className="mt-12 flex gap-6 text-brand-teal/60">
+        <a href="https://instagram.com/lamaisondegador" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors">
           Instagram
         </a>
-        <a href="https://facebook.com/lamaisondegador" target="_blank" rel="noopener noreferrer" className="hover:text-brand-brown transition-colors">
+        <a href="https://facebook.com/lamaisondegador" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors">
           Facebook
         </a>
-        <a href="https://tiktok.com/@lamaisondegador" target="_blank" rel="noopener noreferrer" className="hover:text-brand-brown transition-colors">
+        <a href="https://tiktok.com/@lamaisondegador" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors">
           TikTok
         </a>
       </div>
 
       {/* Footer */}
-      <p className="mt-16 text-sm text-brand-brown/40">
+      <p className="mt-16 text-sm text-brand-teal/40">
         © {new Date().getFullYear()} La Maison de Gador. The Art of Adoration.
       </p>
     </main>
@@ -549,8 +544,8 @@ npm run dev
 
 Open http://localhost:3000 — verify:
 - Logo displays
-- Headline in Handstory font
-- Body text in Satoshi
+- Headline in bold style
+- Body text in Inter
 - Form accepts email, shows thank you
 - WhatsApp link works
 - Social links work
@@ -675,7 +670,7 @@ Manual steps:
 1. Create @lamaisondegador on Instagram
 2. Switch to Business account (Settings → Account → Switch to Professional)
 3. Category: Food & Beverage
-4. Set profile photo: brand icon (logo-icon-dark on cream background, 320x320)
+4. Set profile photo: brand icon (phoenix logo on teal background, 320x320)
 5. Bio: "La Maison de Gador | Chocolatier 🍫\nPremium chocolate dates, Doha\nThe Art of Adoration ✨\n🔗 lamaisondegador.com"
 6. Link: https://lamaisondegador.com
 
