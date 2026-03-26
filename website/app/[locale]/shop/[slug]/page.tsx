@@ -82,7 +82,7 @@ export default async function ProductPage(props: {
             </span>
 
             {/* Product Name */}
-            <h1 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+            <h1 className="text-3xl md:text-4xl font-[family-name:var(--font-playfair)] font-bold text-brand-dark mb-4">
               {product.name[lang]}
             </h1>
 
@@ -104,7 +104,7 @@ export default async function ProductPage(props: {
 
             {/* Ingredients */}
             <div className="mb-8">
-              <h2 className="text-lg font-semibold text-brand-dark mb-4 flex items-center">
+              <h2 className="text-lg font-[family-name:var(--font-playfair)] font-semibold text-brand-dark mb-4 flex items-center">
                 <span className="w-8 h-8 rounded-full bg-brand-gold/10 flex items-center justify-center me-3">
                   <svg
                     className="w-4 h-4 text-brand-gold"
@@ -137,7 +137,7 @@ export default async function ProductPage(props: {
 
             {/* Perfect For */}
             <div className="mb-10">
-              <h2 className="text-lg font-semibold text-brand-dark mb-4 flex items-center">
+              <h2 className="text-lg font-[family-name:var(--font-playfair)] font-semibold text-brand-dark mb-4 flex items-center">
                 <span className="w-8 h-8 rounded-full bg-brand-gold/10 flex items-center justify-center me-3">
                   <svg
                     className="w-4 h-4 text-brand-gold"

@@ -12,11 +12,11 @@ export default async function AboutPage() {
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="inline-block mb-6">
             <div className="h-px w-16 bg-brand-gold mx-auto mb-4" />
-            <span className="text-brand-gold/70 text-sm tracking-[0.3em] uppercase">
+            <span className="text-brand-gold/70 text-lg tracking-[0.3em] font-[family-name:var(--font-script)]">
               La Maison de Gador
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-gold mb-6 tracking-wide">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-playfair)] font-bold text-brand-gold mb-6 tracking-wide">
             {t("title")}
           </h1>
           <p className="text-brand-cream/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
@@ -33,7 +33,7 @@ export default async function AboutPage() {
             {/* Text */}
             <div>
               <div className="h-px w-12 bg-brand-gold mb-6" />
-              <h2 className="text-3xl md:text-4xl font-bold text-brand-teal mb-6 tracking-wide">
+              <h2 className="text-3xl md:text-4xl font-[family-name:var(--font-playfair)] font-bold text-brand-teal mb-6 tracking-wide">
                 {t("origin_title")}
               </h2>
               <p className="text-brand-dark/70 text-lg leading-relaxed">
@@ -113,7 +113,7 @@ export default async function AboutPage() {
             {/* Text (right on desktop) */}
             <div className="order-1 md:order-2">
               <div className="h-px w-12 bg-brand-gold mb-6" />
-              <h2 className="text-3xl md:text-4xl font-bold text-brand-gold mb-6 tracking-wide">
+              <h2 className="text-3xl md:text-4xl font-[family-name:var(--font-playfair)] font-bold text-brand-gold mb-6 tracking-wide">
                 {t("phoenix_title")}
               </h2>
               <p className="text-brand-cream/80 text-lg leading-relaxed">
@@ -134,7 +134,7 @@ export default async function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="h-px w-12 bg-brand-gold mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-teal mb-6 tracking-wide">
+            <h2 className="text-3xl md:text-4xl font-[family-name:var(--font-playfair)] font-bold text-brand-teal mb-6 tracking-wide">
               {t("craft_title")}
             </h2>
             <p className="text-brand-dark/70 text-lg leading-relaxed max-w-3xl mx-auto">
@@ -184,7 +184,7 @@ export default async function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <div className="h-px w-12 bg-brand-gold mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-gold mb-4 tracking-wide">
+            <h2 className="text-3xl md:text-4xl font-[family-name:var(--font-playfair)] font-bold text-brand-gold mb-4 tracking-wide">
               {t("values_title")}
             </h2>
             <div className="h-px w-24 bg-brand-gold/30 mx-auto mt-6" />
@@ -229,7 +229,7 @@ export default async function AboutPage() {
                   </svg>
                 </div>
 
-                <h3 className="text-xl font-bold text-brand-gold mb-3 tracking-wide">
+                <h3 className="text-xl font-[family-name:var(--font-playfair)] font-bold text-brand-gold mb-3 tracking-wide">
                   {value.title}
                 </h3>
                 <p className="text-brand-cream/70 leading-relaxed">

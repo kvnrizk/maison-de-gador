@@ -52,7 +52,7 @@ export default async function GiftsPage(props: {
       {/* Page Header */}
       <section className="bg-brand-teal py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-gold-light tracking-wide mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-playfair)] font-bold text-brand-gold-light tracking-wide mb-6">
             {t("title")}
           </h1>
           <p className="text-brand-cream/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
@@ -93,7 +93,7 @@ export default async function GiftsPage(props: {
 
                 {/* Card Content */}
                 <div className="p-8 lg:p-10">
-                  <h3 className={`text-2xl font-bold ${box.accent} mb-4`}>
+                  <h3 className={`text-2xl font-[family-name:var(--font-playfair)] font-bold ${box.accent} mb-4`}>
                     {t(box.key)}
                   </h3>
                   <p className="leading-relaxed opacity-90 mb-8">
@@ -122,7 +122,7 @@ export default async function GiftsPage(props: {
         <section className="py-20 md:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+              <h2 className="text-3xl md:text-4xl font-[family-name:var(--font-playfair)] font-bold text-brand-dark mb-4">
                 {t("title")}
               </h2>
               <div className="w-16 h-px bg-brand-gold mx-auto" />
@@ -154,7 +154,7 @@ export default async function GiftsPage(props: {
                   </div>
 
                   <div className="p-6 lg:p-8">
-                    <h3 className="text-xl font-bold text-brand-dark mb-2">
+                    <h3 className="text-xl font-[family-name:var(--font-playfair)] font-bold text-brand-dark mb-2">
                       {product.name[locale as "en" | "ar"]}
                     </h3>
                     <p className="text-brand-dark/60 text-sm leading-relaxed mb-4">

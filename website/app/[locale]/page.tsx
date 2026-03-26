@@ -47,7 +47,7 @@ export default async function HomePage(props: {
           </div>
 
           {/* Headline */}
-          <h1 className="text-gold-gradient text-5xl sm:text-6xl lg:text-7xl font-light tracking-wide mb-6">
+          <h1 className="text-gold-gradient text-5xl sm:text-6xl lg:text-7xl font-[family-name:var(--font-script)] tracking-wide mb-6">
             {t("hero_title")}
           </h1>
 
@@ -78,7 +78,7 @@ export default async function HomePage(props: {
         <div className="max-w-7xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-20">
-            <h2 className="text-brand-dark text-4xl sm:text-5xl font-light tracking-wide mb-4">
+            <h2 className="text-brand-dark text-4xl sm:text-5xl font-[family-name:var(--font-playfair)] font-bold tracking-wide mb-4">
               {t("featured_title")}
             </h2>
             <div className="flex items-center justify-center gap-3 mb-6">
@@ -108,7 +108,7 @@ export default async function HomePage(props: {
 
                   {/* Product Info */}
                   <div className="p-6">
-                    <h3 className="text-brand-dark font-medium text-base mb-2 group-hover:text-brand-gold-dark transition-colors duration-300">
+                    <h3 className="text-brand-dark font-[family-name:var(--font-playfair)] font-medium text-base mb-2 group-hover:text-brand-gold-dark transition-colors duration-300">
                       {product.name[lang]}
                     </h3>
                     <p className="text-brand-dark/50 text-sm font-light mb-4 line-clamp-2">
@@ -143,7 +143,7 @@ export default async function HomePage(props: {
                 {t("story_title")}
               </span>
             </div>
-            <p className="text-brand-cream/90 text-xl sm:text-2xl font-light leading-relaxed mb-10">
+            <p className="text-brand-cream/90 text-2xl sm:text-3xl font-[family-name:var(--font-script)] leading-relaxed mb-10">
               {t("story_text")}
             </p>
             <div>
@@ -196,7 +196,7 @@ export default async function HomePage(props: {
             <span className="block w-12 h-px bg-brand-gold/40" />
           </div>
 
-          <h2 className="text-gold-gradient text-3xl sm:text-4xl lg:text-5xl font-light tracking-wide mb-6">
+          <h2 className="text-gold-gradient text-3xl sm:text-4xl lg:text-5xl font-[family-name:var(--font-playfair)] font-bold tracking-wide mb-6">
             {t("cta_title")}
           </h2>
 

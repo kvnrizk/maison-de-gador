@@ -27,7 +27,7 @@ export default async function ShopPage(props: {
       {/* Page Header */}
       <section className="bg-brand-cream py-16 md:py-24">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-dark mb-4">
+          <h1 className="text-4xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold text-brand-dark mb-4">
             {t("title")}
           </h1>
           <div className="w-24 h-1 bg-brand-gold mx-auto mb-6" />
@@ -96,7 +96,7 @@ export default async function ShopPage(props: {
                   </span>
 
                   {/* Product Name */}
-                  <h3 className="text-lg font-semibold text-brand-dark mb-2 group-hover:text-brand-teal transition-colors">
+                  <h3 className="text-lg font-[family-name:var(--font-playfair)] font-semibold text-brand-dark mb-2 group-hover:text-brand-teal transition-colors">
                     {product.name[lang]}
                   </h3>
 
