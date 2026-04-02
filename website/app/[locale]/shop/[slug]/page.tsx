@@ -25,7 +25,7 @@ export default async function ProductPage(props: {
   const whatsappMessage = encodeURIComponent(
     `Hi, I'm interested in ordering: ${product.name.en}`
   );
-  const whatsappUrl = `https://wa.me/97433314007?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/97470770747?text=${whatsappMessage}`;
 
   return (
     <div className="min-h-screen bg-brand-cream">

@@ -39,9 +39,9 @@ export default async function ContactPage(props: {
               <h3 className="text-xl font-[family-name:var(--font-playfair)] font-bold text-brand-dark mb-2">
                 {t("whatsapp")}
               </h3>
-              <p className="text-brand-dark/60 mb-6">+974 3331 4007</p>
+              <p className="text-brand-dark/60 mb-6">+974 7077 0747</p>
               <a
-                href="https://wa.me/97433314007"
+                href="https://wa.me/97470770747"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-brand-teal hover:bg-brand-teal-light text-brand-cream font-semibold px-8 py-3 rounded-full transition-colors duration-200 text-sm tracking-wide"

@@ -100,7 +100,7 @@ export default async function GiftsPage(props: {
                     {box.description}
                   </p>
                   <a
-                    href="https://wa.me/97433314007"
+                    href="https://wa.me/97470770747"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-semibold px-8 py-3 rounded-full transition-colors duration-200 text-sm tracking-wide"
@@ -169,7 +169,7 @@ export default async function GiftsPage(props: {
                       </span>
                     </div>
                     <a
-                      href="https://wa.me/97433314007"
+                      href="https://wa.me/97470770747"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mt-6 w-full inline-flex items-center justify-center gap-2 bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-semibold px-6 py-3 rounded-full transition-colors duration-200 text-sm tracking-wide"
@@ -192,7 +192,7 @@ export default async function GiftsPage(props: {
             {t("custom_arrangement")}
           </p>
           <a
-            href="https://wa.me/97433314007"
+            href="https://wa.me/97470770747"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-bold px-10 py-4 rounded-full transition-colors duration-200 tracking-wide"

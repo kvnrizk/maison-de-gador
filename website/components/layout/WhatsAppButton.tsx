@@ -7,7 +7,7 @@ export default function WhatsAppButton() {
 
   return (
     <a
-      href="https://wa.me/97433314007?text=I%20want%20to%20know%20more%20about%20La%20Maison%20de%20Gador"
+      href="https://wa.me/97470770747?text=I%20want%20to%20know%20more%20about%20La%20Maison%20de%20Gador"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#25D366] text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all"

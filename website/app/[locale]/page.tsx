@@ -201,7 +201,7 @@ export default async function HomePage(props: {
           </p>
 
           <a
-            href="https://wa.me/97433314007"
+            href="https://wa.me/97470770747"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-10 py-4 bg-brand-gold text-brand-teal font-medium text-sm uppercase tracking-[0.15em] hover:bg-brand-gold-light transition-colors duration-300"
