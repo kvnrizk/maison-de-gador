@@ -52,7 +52,7 @@ export default async function HomePage(props: {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-brand-cream/80 text-lg sm:text-xl font-light tracking-wide max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="text-brand-cream/80 text-lg sm:text-xl font-[family-name:var(--font-script)] tracking-wide max-w-2xl mx-auto mb-12 leading-relaxed">
             {t("hero_subtitle")}
           </p>
 
@@ -196,7 +196,7 @@ export default async function HomePage(props: {
             {t("cta_title")}
           </h2>
 
-          <p className="text-brand-cream/70 text-lg font-light mb-12 max-w-xl mx-auto">
+          <p className="text-brand-cream/70 text-lg font-[family-name:var(--font-script)] mb-12 max-w-xl mx-auto">
             {t("cta_subtitle")}
           </p>
 
