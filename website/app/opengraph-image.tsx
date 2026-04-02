@@ -46,7 +46,7 @@ export default async function Image() {
 
         {/* Logo */}
         <img
-          src="https://maison-de-gador.vercel.app/logo.png"
+          src="https://lamaisondegador.com/logo.png"
           width={140}
           height={140}
           style={{ marginBottom: "24px", objectFit: "contain" }}
