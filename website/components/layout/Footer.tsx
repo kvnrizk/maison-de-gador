@@ -43,7 +43,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <a href="https://instagram.com/lamaisondegador" target="_blank" rel="noopener noreferrer" className="text-sm text-brand-cream/50 hover:text-brand-gold transition-colors">
+                <a href="https://instagram.com/lmd.gador" target="_blank" rel="noopener noreferrer" className="text-sm text-brand-cream/50 hover:text-brand-gold transition-colors">
                   Instagram
                 </a>
               </li>

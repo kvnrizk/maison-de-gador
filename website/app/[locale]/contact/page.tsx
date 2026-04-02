@@ -183,7 +183,7 @@ export default async function ContactPage(props: {
           <div className="flex items-center justify-center gap-8">
             {/* Instagram */}
             <a
-              href="https://instagram.com/lamaisondegador"
+              href="https://instagram.com/lmd.gador"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex flex-col items-center gap-3"
