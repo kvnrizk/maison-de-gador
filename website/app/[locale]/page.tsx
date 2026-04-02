@@ -30,7 +30,7 @@ export default async function HomePage(props: {
           {/* Phoenix Logo */}
           <div className="mb-12">
             <Image
-              src="/logo-light.png"
+              src="/logo.png"
               alt="La Maison de Gador"
               width={160}
               height={160}
@@ -163,7 +163,7 @@ export default async function HomePage(props: {
               <div className="absolute inset-8 border border-brand-gold/10 rotate-45" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <Image
-                  src="/logo-light.png"
+                  src="/logo.png"
                   alt="La Maison de Gador"
                   width={80}
                   height={80}

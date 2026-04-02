@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <img src="/logo-light.png" alt="La Maison de Gador" className="h-16 w-auto mb-4" />
+            <img src="/logo.png" alt="La Maison de Gador" className="h-16 w-auto mb-4" />
             <p className="text-lg font-[family-name:var(--font-script)] text-brand-gold/60">{t("tagline")}</p>
           </div>
 

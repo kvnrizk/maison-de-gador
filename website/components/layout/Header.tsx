@@ -25,7 +25,7 @@ export default function Header({ locale }: { locale: string }) {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <img src="/logo-icon.png" alt="" className="h-10 w-auto" />
+          <img src="/logo.png" alt="" className="h-10 w-auto" />
           <span className="text-brand-teal font-[family-name:var(--font-playfair)] font-bold text-lg tracking-wide hidden sm:inline">
             GADOR
           </span>
