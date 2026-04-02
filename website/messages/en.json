@@ -63,7 +63,8 @@
     "wedding": "Wedding Favors",
     "corporate": "Corporate Gifts",
     "customize_cta": "Customize This Box",
-    "pieces": "pieces"
+    "pieces": "pieces",
+    "custom_arrangement": "Need a custom arrangement? We create bespoke gift boxes for any occasion, any quantity."
   },
   "contact": {
     "title": "Get in Touch",
@@ -74,7 +75,11 @@
     "location_value": "Doha, Qatar",
     "hours": "Hours",
     "hours_value": "Sun–Thu: 9am–9pm",
-    "follow": "Follow Us"
+    "follow": "Follow Us",
+    "chat_now": "Chat Now",
+    "send_email": "Send Email",
+    "map_coming_soon": "Map Coming Soon",
+    "handcrafted": "Handcrafted with love in Doha, Qatar"
   },
   "footer": {
     "tagline": "The Art of Adoration",

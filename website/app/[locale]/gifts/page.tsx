@@ -189,9 +189,7 @@ export default async function GiftsPage(props: {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <div className="w-12 h-px bg-brand-gold/40 mx-auto mb-8" />
           <p className="text-brand-cream/70 text-xl mb-8 leading-relaxed font-[family-name:var(--font-script)]">
-{locale === "ar"
-              ? "هل تحتاج إلى ترتيب خاص؟ نصنع علب هدايا مخصصة لأي مناسبة وبأي كمية."
-              : "Need a custom arrangement? We create bespoke gift boxes for any occasion, any quantity."}
+            {t("custom_arrangement")}
           </p>
           <a
             href="https://wa.me/97433314007"
