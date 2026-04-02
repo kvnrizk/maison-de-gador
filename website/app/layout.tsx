@@ -10,7 +10,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "La Maison de Gador — Chocolatier",
     description: "Premium chocolate dates, handcrafted in Qatar.",
-    images: ["/og-image.png"],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "La Maison de Gador — Chocolatier",
+    description: "Premium chocolate dates, handcrafted in Qatar.",
+    images: ["/opengraph-image"],
   },
 };
 
