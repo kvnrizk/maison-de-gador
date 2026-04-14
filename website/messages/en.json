@@ -90,5 +90,12 @@
   "common": {
     "language": "العربية",
     "whatsapp_cta": "Chat on WhatsApp"
+  },
+  "soon": {
+    "tagline": "The Art of Adoration",
+    "headline": "Coming Soon",
+    "promise": "Premium chocolate dates, handcrafted in Doha. Our home is being prepared — stay close for the unveiling.",
+    "cta_whatsapp": "Chat on WhatsApp",
+    "footer": "Crafted in Qatar"
   }
 }

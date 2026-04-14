@@ -5,6 +5,7 @@ import { routing } from "@/i18n/routing";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import ComingSoon from "@/components/layout/ComingSoon";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -46,6 +47,7 @@ export default async function LocaleLayout({
 
   const messages = (await import(`../../messages/${locale}.json`)).default;
   const isRtl = locale === "ar";
+  const comingSoon = process.env.COMING_SOON === "true";
 
   return (
     <html lang={locale} dir={isRtl ? "rtl" : "ltr"} suppressHydrationWarning>
@@ -55,10 +57,16 @@ export default async function LocaleLayout({
         } antialiased min-h-screen flex flex-col`}
       >
         <NextIntlClientProvider locale={locale} messages={messages} now={new Date()}>
-          <Header locale={locale} />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <WhatsAppButton />
+          {comingSoon ? (
+            <ComingSoon locale={locale} />
+          ) : (
+            <>
+              <Header locale={locale} />
+              <main className="flex-1">{children}</main>
+              <Footer />
+              <WhatsAppButton />
+            </>
+          )}
         </NextIntlClientProvider>
       </body>
     </html>
